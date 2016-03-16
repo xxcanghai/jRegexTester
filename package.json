@@ -1,0 +1,26 @@
+{
+  "name": "jregextester",
+  "version": "1.0.0",
+  "description": "regex tester",
+  "main": "index.html",
+  "scripts": {
+    "lite": "lite-server –port 10001", 
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jch",
+    "xxcanghai",
+    "regex",
+    "regexp"
+  ],
+  "author": "xxcanghai",
+  "homepage": "https://github.com/xxcanghai",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.1.0",
+    "tsd": "^0.6.5",
+    "typescript": "^1.8.7",
+    "typings": "^0.7.8"
+  }
+}
