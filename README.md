@@ -1,7 +1,7 @@
-#jRegexTester简介
+# jRegexTester简介
 jRegexTester是一款类似[regexbuddy](https://www.regexbuddy.com/)的正则表达式编写测试工具。
 
-####用途：
+#### 用途：
 1、帮助开发人员编写正则表达式。
 
 2、测试正则表达式是否正确，是否匹配到了所有情况，是否包含错误匹配等。
@@ -10,10 +10,10 @@ jRegexTester是一款类似[regexbuddy](https://www.regexbuddy.com/)的正则表
 
 4、批量提取信息，如提取文本中所有电话号码、邮件，提取各类信息等。
 
-####为何重复造轮子：
+#### 为何重复造轮子：
 因为强大的regexbuddy无法在mac下使用，搜索了下mac下的正则测试工具，要么商用付费，要么功能奇弱，要么无法满足我的常用需求，遂开发此在线工具，以满足日常使用。
 
-####准备接下来开发的功能：
+#### 准备接下来开发的功能：
 1、输入字符串的实时匹配结果高亮显示。
 
 2、输出结果的实时高亮显示。
@@ -23,5 +23,5 @@ jRegexTester是一款类似[regexbuddy](https://www.regexbuddy.com/)的正则表
 4、常用正则的选取调用功能。
 
 
-#DEMO
+# DEMO
 在线访问地址 :[http://xxcanghai.github.io/jRegexTester/](http://xxcanghai.github.io/jRegexTester/)
