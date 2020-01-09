@@ -61,7 +61,7 @@
       <nav>
         <ul>
           <li>
-            Modified by  <a class="inline-icon" href="https;//chengpengzhao.com">Zcp</a>
+            Modified by  <a class="inline-icon" href="https://chengpengzhao.com">Zcp</a>
           </li>
           <li>
             <a class="inline-icon" href="https://github.com/chengpengzhao/Reg_Exper-Tester">Source on Github</a>
@@ -214,13 +214,13 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-info" role="toolbar">
-                        <h4 class="title">jRegexTester 正则表达式测试器 v1.0  Forked by <a href="mailto:z609722559@gmail.com">Zcp</a></h4>
+                        <h4 class="title">jRegexTester 正则表达式测试器 v1.1  Forked by <a href="mailto:z609722559@gmail.com">Zcp</a></h4>
                         <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
                             <label class="btn btn-default active">
-                                    <input type="radio" name="workMode" id="workModeMatch" value="0" checked>查找模式
+                                    <input type="radio" name="workMode" id="workModeMatch" value="0" checked>Find(查找模式)
                                 </label>
                             <label class="btn btn-default">
-                                    <input type="radio" name="workMode" id="workModeReplace" value="1">替换模式
+                                    <input type="radio" name="workMode" id="workModeReplace" value="1">Replace(替换模式)
                                 </label>
                         </div>
                     </div>
@@ -232,16 +232,16 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">正则表达式：</label>
+                        <label for="">Expression(正则表达式)：</label>
                         <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
                             <label class="btn btn-default active" title="选中为匹配所有符合项，否则只匹配第一项，参数g">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>全局模式
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionGlobal" value="g" checked>Global matches(全局模式)
                                 </label>
                             <label class="btn btn-default" title="选中则忽略大小写，参数i">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">忽略大小写
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionIgnoreCase" value="i">Case insensitive(忽略大小写)
                                 </label>
                             <label class="btn btn-default" title="选中则转义^和$为行的开始和结束，否则^和$为所有文本的开始和结束">
-                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">多行模式
+                                    <input type="checkbox" name="RegExpOption" id="RegExpOptionMultiline" value="m">Multiple rows(多行模式)
                                 </label>
                         </div>
                         <textarea class="form-control" style="font-size:x-large" name="" id="tbReg" cols="30" rows="1" placeholder="正则表达式" spellcheck="false"></textarea>
@@ -253,7 +253,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">输入字符串：</label>
+                        <label for="">String input(输入字符串)：</label>
                         <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="输入字符串" spellcheck="false"></textarea>
                     </div>
                 </div>
@@ -263,13 +263,13 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">替换内容：</label>
+                        <label for="">To be replaced(替换内容)：</label>
                         <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
                             <label class="btn btn-default active" title="默认模式，指将源字符串中的匹配结果替换为新内容">
-                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>包含未匹配
+                                <input type="radio" name="replaceMode" id="replaceModeIncludeNoMatch" value="0" checked>Include unmatched(包含未匹配)
                             </label>
                             <label class="btn btn-default" title="提取模式，用于将源字符串中匹配内容替换后新内容，常用于数据提取">
-                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">不包含未匹配
+                                <input type="radio" name="replaceMode" id="replaceModeExcludeNoMatch" value="1">Exclude unmatched(不包含未匹配)
                             </label>
                         </div>
                         <textarea class="form-control" name="" id="tbReplace" cols="30" rows="3" placeholder="替换内容" spellcheck="false"></textarea>
@@ -281,21 +281,21 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
-                        <label for="">输出结果：</label>
+                        <label for="">Output(输出结果)：</label>
                         
                         <div class="btn-group btn-group-xs"  role="group">
-                            <label class="btn btn-default" title="将输出结果导入输入内容框" id="btnOutputToInput">⬆</label>
+                            <label class="btn btn-default" title="将输出结果导入输入内容框" id="btnOutputToInput">⬆ Copy Output to Input</label>
                         </div>
                         
                         <div class="btn-group btn-group-xs" data-toggle="buttons" role="group">
                             <label class="btn btn-default active" title="window系统换行符,CRLF">
-                                <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n
+                                <input type="radio" name="newLineChar" id="newLineCharCRLF" value="0" checked>\r\n (Windows)
                             </label>
                             <label class="btn btn-default" title="Mac系统换行符,CR">
-                                <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r
+                                <input type="radio" name="newLineChar" id="newLineCharCR" value="1">\r (Mac)
                             </label>
                             <label class="btn btn-default" title="Linux系统换行符,LF">
-                                <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n
+                                <input type="radio" name="newLineChar" id="newLineCharLF" value="2">\n  (Linux)
                             </label>
                         </div>
                         <textarea class="form-control" name="" id="tbOutput" cols="30" rows="7" placeholder="" spellcheck="false"></textarea>
