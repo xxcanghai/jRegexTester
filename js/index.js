@@ -4,6 +4,7 @@ $(function () {
     var $tbInput = $("#tbInput");
     var $tbReplace = $("#tbReplace");
     var $tbOutput = $("#tbOutput");
+    var $tbHighlightInput = $("#tbHighlightInput");
     var cmReg = null;
     var cmInput = null;
     var cmReplace = null;
@@ -34,6 +35,7 @@ $(function () {
         $tbReg.add($tbInput).add($tbReplace).bind("change input", function (e) {
             run();
         });
+	
         //手动运行
         $("#btnRun").click(function (e) {
             run();
@@ -68,7 +70,7 @@ $(function () {
         });
     }
     function run() {
-        var txtReg = $tbReg.val();
+        var txtReg = RegExp($tbReg.val());
         var txtInput = $tbInput.val();
         var txtReplace = $tbReplace.val();
         var reg = valiInputReg($tbReg, RegExpOption);
@@ -96,6 +98,12 @@ $(function () {
             outputResult = jch.jRegexTester.replace(reg, txtInput, txtReplace, replaceMode);
         }
         valiOutput(outputResult);
+
+	RegforHighlight=RegExp($tbReg.val(),'g');
+	HighlightInput=txtInput.replace(RegforHighlight,'<span style="background-color:yellow;">'+"$&"+'</span>')
+        $tbHighlightInput.html(HighlightInput);
+
+
     }
     /**
      * 变更工作模式
