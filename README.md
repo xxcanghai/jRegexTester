@@ -1,4 +1,17 @@
-# jRegexTester简介
+正则表达式可视化+在线测试工具，可下载后离线使用。
+
+Demo: <https://chengpengzhao.com/Reg_Exper-Tester/>
+
+# Reg_Exper-Tester
+
+Reg_Exper-Tester is a tool for Regular Expression **Visualization** and **Test**. The site combined a popular tool named Regexper and a test tool for Regular Expression named jRegexTester.
+
+Modified by [Zcp]( http://chengpengzhao.com/ "").
+
+## Regexper 
+< http://regexper.com/>
+
+## jRegexTester
 jRegexTester是一款类似[regexbuddy](https://www.regexbuddy.com/)的正则表达式编写测试工具。
 
 #### 用途：
@@ -12,16 +25,3 @@ jRegexTester是一款类似[regexbuddy](https://www.regexbuddy.com/)的正则表
 
 #### 为何重复造轮子：
 因为强大的regexbuddy无法在mac下使用，搜索了下mac下的正则测试工具，要么商用付费，要么功能奇弱，要么无法满足我的常用需求，遂开发此在线工具，以满足日常使用。
-
-#### 准备接下来开发的功能：
-1、输入字符串的实时匹配结果高亮显示。
-
-2、输出结果的实时高亮显示。
-
-3、输入正则表达式的辅助高亮显示（不好弄）。
-
-4、常用正则的选取调用功能。
-
-
-# DEMO
-在线访问地址 :[http://xxcanghai.github.io/jRegexTester/](http://xxcanghai.github.io/jRegexTester/)
