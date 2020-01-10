@@ -47,6 +47,17 @@
             height: 30px;
             line-height: 30px;
         }
+        /* 设置自动换行，背景色，高度等*/
+        .Highlight-control {
+            overflow: auto;
+            padding: 6px;
+            line-height: 20px;
+            max-height: 166px;
+            white-space: pre;
+            background-color: white;
+            word-break: break-all;
+
+        }
     </style>
     <!-- Built: 2019-01-08T23:08:41.690Z -->
   </head>
@@ -254,7 +265,7 @@
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
                         <label for="">Highlight(匹配结果高亮)：</label>
-                        <div class="form-control" name="" id="tbHighlightInput" cols="30" rows="7" placeholder="Highlight" spellcheck="false"></div>
+                        <div class="Highlight-control" name="" id="tbHighlightInput" cols="30" rows="7" placeholder="Highlight" spellcheck="false"></div>
                     </div>
                 </div>
             </div>
