@@ -4,6 +4,24 @@ var jch;
 (function (jch) {
     var Core;
     (function (Core) {
+        /**
+         * 复制内容到剪贴板
+         * @param str 要复制的文本
+         */
+        function copyToClipboard(str) {
+            var transfer = document.createElement('input');
+            document.body.appendChild(transfer);
+            transfer.value = str; // 这里表示想要复制的内容
+            transfer.focus();
+            transfer.select();
+            if (document.execCommand('copy')) {
+                document.execCommand('copy');
+            }
+            transfer.blur();
+            console.log('复制成功:', str);
+            document.body.removeChild(transfer);
+        }
+        Core.copyToClipboard = copyToClipboard;
         function isString(str) {
             return typeof str === 'string' && str.length > 0;
         }

@@ -2,6 +2,24 @@
 //jch基础类库，实现对JS的扩展
 namespace jch {
     export module Core {
+        /**
+         * 复制内容到剪贴板
+         * @param str 要复制的文本
+         */
+        export function copyToClipboard(str: string) {
+            let transfer = document.createElement('input');
+            document.body.appendChild(transfer);
+            transfer.value = str;  // 这里表示想要复制的内容
+            transfer.focus();
+            transfer.select();
+            if (document.execCommand('copy')) {
+                document.execCommand('copy');
+            }
+            transfer.blur();
+            console.log('复制成功:', str);
+            document.body.removeChild(transfer);
+
+        }
 
         export function isString(str: any): str is string {
             return typeof str === 'string' && str.length > 0;

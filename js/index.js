@@ -4,6 +4,7 @@ $(function () {
     var $tbInput = $("#tbInput");
     var $tbReplace = $("#tbReplace");
     var $tbOutput = $("#tbOutput");
+    var $copyLink = $('#copyLink');
     var cmReg = null;
     var cmInput = null;
     var cmReplace = null;
@@ -75,6 +76,12 @@ $(function () {
         $("#btnOutputToInput").click(function (e) {
             $tbInput.val($tbOutput.val());
             run();
+        });
+        $copyLink.click(function () {
+            var reg = encodeURIComponent($tbReg.val());
+            var replace = encodeURIComponent($tbReplace.val());
+            var str = location.origin + location.pathname + "?reg=" + reg + "&replace=" + replace;
+            jch.Core.copyToClipboard(str);
         });
     }
     function run() {

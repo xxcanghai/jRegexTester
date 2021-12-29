@@ -5,6 +5,7 @@ $(function () {
     var $tbInput: JQuery = $("#tbInput");
     var $tbReplace: JQuery = $("#tbReplace");
     var $tbOutput: JQuery = $("#tbOutput");
+    var $copyLink: JQuery = $('#copyLink');
 
     var cmReg: CodeMirror.EditorFromTextArea = null;
     var cmInput: CodeMirror.EditorFromTextArea = null;
@@ -92,6 +93,13 @@ $(function () {
             $tbInput.val($tbOutput.val());
             run();
         });
+
+        $copyLink.click(function () {
+            var reg = encodeURIComponent($tbReg.val());
+            var replace = encodeURIComponent($tbReplace.val());
+            var str = `${location.origin + location.pathname}?reg=${reg}&replace=${replace}`;
+            jch.Core.copyToClipboard(str);
+        })
     }
 
     function run(): void {
