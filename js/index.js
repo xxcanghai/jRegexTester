@@ -16,9 +16,19 @@ $(function () {
     function init() {
         bind();
         changeWorkMode(jrt.workMode.match);
-        $tbReg.val("([^?&=]+)=([^?&=]*)");
-        $tbInput.val("https://www.google.com.hk/search?q=CodeMirror&aqs=chrome&sourceid=chrome&es_sm=91&ie=UTF-8");
-        $tbReplace.val("\"$1\":\"$2\",\r\n");
+        var queryObj = jch.Core.getQueryObject();
+        if (jch.Core.isString(queryObj.reg)) {
+            $tbReg.val(decodeURIComponent(queryObj.reg));
+        }
+        if (jch.Core.isString(queryObj.input)) {
+            $tbInput.val(decodeURIComponent(queryObj.input));
+        }
+        if (jch.Core.isString(queryObj.replace)) {
+            $tbReplace.val(decodeURIComponent(queryObj.replace));
+        }
+        // $tbReg.val("([^?&=]+)=([^?&=]*)");
+        // $tbInput.val("https://www.google.com.hk/search?q=CodeMirror&aqs=chrome&sourceid=chrome&es_sm=91&ie=UTF-8");
+        // $tbReplace.val("\"$1\":\"$2\",\r\n");
         // cmReg = CodeMirror.fromTextArea(<HTMLTextAreaElement>$tbReg.get(0), {
         //     mode: "javascript",
         // });

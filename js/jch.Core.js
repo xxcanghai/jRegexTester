@@ -4,6 +4,23 @@ var jch;
 (function (jch) {
     var Core;
     (function (Core) {
+        function isString(str) {
+            return typeof str === 'string' && str.length > 0;
+        }
+        Core.isString = isString;
+        function getQueryObject(searchStr) {
+            if (searchStr === void 0) { searchStr = location.search; }
+            var map = {};
+            var matchs = searchStr.match(/([^?&=]+)=([^?&=]*)/g);
+            if (Array.isArray(matchs)) {
+                matchs.forEach(function (kv) {
+                    var m = kv.split('=');
+                    map[m[0]] = m[1];
+                });
+            }
+            return map;
+        }
+        Core.getQueryObject = getQueryObject;
         //是否为IE浏览器
         // export var isIE: boolean = !$.support.radioValue;
         //是否为IE6，IE7，IE8

@@ -1,5 +1,5 @@
 
-$(function() {
+$(function () {
     var jrt = jch.jRegexTester;
     var $tbReg: JQuery = $("#tbReg");
     var $tbInput: JQuery = $("#tbInput");
@@ -20,9 +20,19 @@ $(function() {
     function init(): void {
         bind();
         changeWorkMode(jrt.workMode.match);
-        $tbReg.val("([^?&=]+)=([^?&=]*)");
-        $tbInput.val("https://www.google.com.hk/search?q=CodeMirror&aqs=chrome&sourceid=chrome&es_sm=91&ie=UTF-8");
-        $tbReplace.val("\"$1\":\"$2\",\r\n");
+        let queryObj = jch.Core.getQueryObject<{ reg: string, input: string, replace: string }>();
+        if (jch.Core.isString(queryObj.reg)) {
+            $tbReg.val(decodeURIComponent(queryObj.reg));
+        }
+        if (jch.Core.isString(queryObj.input)) {
+            $tbInput.val(decodeURIComponent(queryObj.input));
+        }
+        if (jch.Core.isString(queryObj.replace)) {
+            $tbReplace.val(decodeURIComponent(queryObj.replace));
+        }
+        // $tbReg.val("([^?&=]+)=([^?&=]*)");
+        // $tbInput.val("https://www.google.com.hk/search?q=CodeMirror&aqs=chrome&sourceid=chrome&es_sm=91&ie=UTF-8");
+        // $tbReplace.val("\"$1\":\"$2\",\r\n");
 
         // cmReg = CodeMirror.fromTextArea(<HTMLTextAreaElement>$tbReg.get(0), {
 
@@ -41,35 +51,35 @@ $(function() {
 
     function bind(): void {
         //输入自动运行
-        $tbReg.add($tbInput).add($tbReplace).bind("change input", function(e) {
+        $tbReg.add($tbInput).add($tbReplace).bind("change input", function (e) {
             run();
         });
 
         //手动运行
-        $("#btnRun").click(function(e) {
+        $("#btnRun").click(function (e) {
             run();
         });
 
         //修改工作模式
-        $("input[name='workMode']").change(function(e) {
+        $("input[name='workMode']").change(function (e) {
             changeWorkMode($("input[name='workMode']:checked").val());
             run();
         });
 
         //修改替换模式
-        $("input[name='replaceMode']").change(function(e) {
+        $("input[name='replaceMode']").change(function (e) {
             replaceMode = Number($("input[name='replaceMode']:checked").val());
             run();
         });
 
         //修改换行符
-        $("input[name='newLineChar']").change(function(e) {
+        $("input[name='newLineChar']").change(function (e) {
             newLineChar = Number($("input[name='newLineChar']:checked").val());
             run();
         });
 
         //修改正则选项
-        $("input[name='RegExpOption']").change(function(e) {
+        $("input[name='RegExpOption']").change(function (e) {
             var $ipt = $(this);
             var val = $ipt.val();
             RegExpOption = RegExpOption.replace(val, "");
@@ -78,7 +88,7 @@ $(function() {
         });
 
         //将输出内容导入输入内容框
-        $("#btnOutputToInput").click(function(e) {
+        $("#btnOutputToInput").click(function (e) {
             $tbInput.val($tbOutput.val());
             run();
         });
@@ -103,7 +113,7 @@ $(function() {
             if (matchArr.length == 0) {
                 return valiOutput(false);
             }
-            $.each(matchArr, function(i: number, match: RegExpExecArray) {
+            $.each(matchArr, function (i: number, match: RegExpExecArray) {
                 if (!(match instanceof Array)) {
                     return true;
                 }

@@ -22,6 +22,9 @@ jRegexTester是一款类似[regexbuddy](https://www.regexbuddy.com/)的正则表
 
 4、常用正则的选取调用功能。
 
+#### 更新：
+2021-12-29: 支持通过参数传递界面默认值，参数: reg为正则表达式，input为输入字符串，replace为替换字符串。
+
 
 # DEMO
 在线访问地址 :[http://xxcanghai.github.io/jRegexTester/](http://xxcanghai.github.io/jRegexTester/)

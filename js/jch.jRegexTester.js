@@ -118,6 +118,7 @@ var jch;
          *
          * @enum {number}
          */
+        var replaceMode;
         (function (replaceMode) {
             /**
              * 替换后包含未匹配字符串（默认）
@@ -127,13 +128,13 @@ var jch;
              * 替换后不包含未匹配字符串
              */
             replaceMode[replaceMode["excludeNoMatch"] = 1] = "excludeNoMatch";
-        })(jRegexTester.replaceMode || (jRegexTester.replaceMode = {}));
-        var replaceMode = jRegexTester.replaceMode;
+        })(replaceMode = jRegexTester.replaceMode || (jRegexTester.replaceMode = {}));
         /**
          * jRegexTester的工作模式
          *
          * @enum {number}
          */
+        var workMode;
         (function (workMode) {
             /**
              * 匹配查找模式
@@ -143,13 +144,13 @@ var jch;
              * 替换模式
              */
             workMode[workMode["replace"] = 1] = "replace";
-        })(jRegexTester.workMode || (jRegexTester.workMode = {}));
-        var workMode = jRegexTester.workMode;
+        })(workMode = jRegexTester.workMode || (jRegexTester.workMode = {}));
         /**
          * 换行符枚举
          *
          * @enum {number}
          */
+        var newLineChar;
         (function (newLineChar) {
             /**
              * 回车换行\r\n(windows)
@@ -163,13 +164,13 @@ var jch;
              * 换行\n(Linux)
              */
             newLineChar[newLineChar["LF"] = 2] = "LF";
-        })(jRegexTester.newLineChar || (jRegexTester.newLineChar = {}));
-        var newLineChar = jRegexTester.newLineChar;
+        })(newLineChar = jRegexTester.newLineChar || (jRegexTester.newLineChar = {}));
         /**
          * 正则表达式选项
          *
          * @enum {number}
          */
+        var RegExpOption;
         (function (RegExpOption) {
             /**
              * 全局匹配
@@ -183,7 +184,6 @@ var jch;
              * 多行模式
              */
             RegExpOption[RegExpOption["multiline"] = 2] = "multiline";
-        })(jRegexTester.RegExpOption || (jRegexTester.RegExpOption = {}));
-        var RegExpOption = jRegexTester.RegExpOption;
+        })(RegExpOption = jRegexTester.RegExpOption || (jRegexTester.RegExpOption = {}));
     })(jRegexTester = jch.jRegexTester || (jch.jRegexTester = {}));
 })(jch || (jch = {}));

@@ -2,6 +2,23 @@
 //jch基础类库，实现对JS的扩展
 namespace jch {
     export module Core {
+
+        export function isString(str: any): str is string {
+            return typeof str === 'string' && str.length > 0;
+        }
+
+        export function getQueryObject<T = any>(searchStr: string = location.search): T {
+            var map: T = {} as any;
+            var matchs = searchStr.match(/([^?&=]+)=([^?&=]*)/g);
+            if (Array.isArray(matchs)) {
+                matchs.forEach(kv => {
+                    var m = kv.split('=');
+                    map[m[0]] = m[1];
+                })
+            }
+            return map;
+        }
+
         //是否为IE浏览器
         // export var isIE: boolean = !$.support.radioValue;
         //是否为IE6，IE7，IE8
@@ -58,7 +75,7 @@ namespace jch {
             if (typeof (ns) !== "string" || ns.length === 0) {
                 return obj;
             }
-            arr = $.grep(ns.replace(/^[\s\.]*|[\s\.]*$|[^\w\. ]/g, "").replace(/\.{2,}/, ".").split("."),(n: string): boolean => { return n.length > 0 });
+            arr = $.grep(ns.replace(/^[\s\.]*|[\s\.]*$|[^\w\. ]/g, "").replace(/\.{2,}/, ".").split("."), (n: string): boolean => { return n.length > 0 });
             return arr.length == 0 ?
                 result :
                 getObj(result, arr);
@@ -88,7 +105,7 @@ namespace jch {
          * @param {Object} fnThis 调用这个函数的this值
          * @param {any[]} argsArr 调用这个函数的参数列表
          */
-        export function getValueByFnOrArg(obj: Function|any, fnThis?: Object, argsArr?: any[]): any {
+        export function getValueByFnOrArg(obj: Function | any, fnThis?: Object, argsArr?: any[]): any {
             var cellResult: any = null;
             if (!$.isFunction(obj)) return obj;
             cellResult = obj.apply(fnThis, $.makeArray(argsArr));
@@ -157,7 +174,7 @@ namespace jch {
          * @param {boolean|string} boolStr 可能是布尔值的字符串
          * @param {any} defaultValue 如果不是一个布尔值将返回此值，若此值未设定将抛出异常
          */
-        export function getBoolByStr(boolStr: boolean|string, defaultValue?: any): boolean|any {
+        export function getBoolByStr(boolStr: boolean | string, defaultValue?: any): boolean | any {
             convert: {
                 if (typeof (boolStr) != "boolean" && typeof (boolStr) != "string") {
                     break convert;
