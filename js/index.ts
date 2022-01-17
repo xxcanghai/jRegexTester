@@ -94,6 +94,21 @@ $(function () {
             run();
         });
 
+        //将输入字符串调用decodeURIComponent解码
+        $("#btnDecodeURI").click(function (e) {
+            $tbInput.val(decodeURIComponent($tbInput.val()));
+        });
+
+        //将输入字符串当做base64进行解码
+        $("#btnDecodeBase64").click(function (e) {
+            // window.btoa();// base64编码
+            try {
+                $tbInput.val(window.atob($tbInput.val()));
+            } catch (e) {
+                alert('当前不是一个合法base64字符串');
+            }
+        });
+
         $copyLink.click(function () {
             var reg = encodeURIComponent($tbReg.val());
             var replace = encodeURIComponent($tbReplace.val());

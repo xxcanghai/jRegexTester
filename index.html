@@ -65,7 +65,7 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-info" role="toolbar">
-                        <h4 class="title">jRegexTester 正则表达式测试器 v1.1</h4>
+                        <h4 class="title">jRegexTester 正则表达式测试器 v1.2</h4>
                         <div class="btn-group btn-group-sm" data-toggle="buttons" role="group">
                             <label class="btn btn-default active">
                                     <input type="radio" name="workMode" id="workModeMatch" value="0" checked>查找模式
@@ -107,6 +107,10 @@
                 <div class="form-group">
                     <div class="btn-toolbar alert alert-warning" role="toolbar">
                         <label for="">输入字符串：</label>
+                        <div class="btn-group btn-group-xs" role="group">
+                            <label class="btn btn-default" title="将输入字符串调用decodeURIComponent解码" id="btnDecodeURI">decodeURI</label>
+                            <label class="btn btn-default" title="将输入字符串当做base64进行解码" id="btnDecodeBase64">Base64解码</label>
+                        </div>
                         <textarea class="form-control" name="" id="tbInput" cols="30" rows="7" placeholder="输入字符串" spellcheck="false"></textarea>
                     </div>
                 </div>
