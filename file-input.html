@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>文件上传测试</title>
+</head>
+
+<body>
+    <h1>文件上传测试</h1>
+    <input type="file" id="fileInput" />
+    <br />
+    <h3>选择的文件名：<span id="fileName"></span></h3>
+    <br /><br />
+    <script>
+        var input = document.getElementById("fileInput");
+        input.addEventListener("change", e => {
+            if (input.files.length > 0) {
+                var file = input.files[0];
+                console.log('file:', file,file.name)
+                document.getElementById("fileName").innerText=file.name;
+            } else {
+                console.log('未选择文件')
+            }
+        })
+    </script>
+</body>
+
+</html>
